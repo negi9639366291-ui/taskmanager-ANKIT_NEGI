@@ -52,7 +52,7 @@ export default function DashboardLayout() {
   const activePage = navItems.find(item => item.path === location.pathname) || { label: 'Dashboard' };
 
   return (
-    <div className="flex h-screen bg-[#f8fafc] overflow-hidden font-sans">
+    <div className="flex h-screen bg-dark-bg overflow-hidden font-sans dashboard-dark">
       {/* Mobile Sidebar Overlay */}
       <AnimatePresence>
         {isMobileOpen && (
@@ -215,50 +215,50 @@ export default function DashboardLayout() {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden relative">
         {/* Top Navbar */}
-        <header className={`h-14 flex items-center justify-between px-4 md:px-6 z-30 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-200/60' : 'bg-transparent'}`}>
+        <header className={`h-14 flex items-center justify-between px-4 md:px-6 z-30 transition-all duration-300 ${scrolled ? 'bg-dark-bg/80 backdrop-blur-md shadow-sm border-b border-white/5' : 'bg-transparent'}`}>
           <div className="flex items-center gap-3">
             <button 
               onClick={() => setIsMobileOpen(true)}
-              className="p-1.5 hover:bg-slate-100 rounded-lg lg:hidden text-slate-600"
+              className="p-1.5 hover:bg-white/5 rounded-lg lg:hidden text-slate-400"
             >
               <Menu className="w-5 h-5" />
             </button>
             
             <div className="hidden sm:flex items-center text-xs font-semibold">
-              <div className="flex items-center text-slate-400">
+              <div className="flex items-center text-slate-500">
                 <LayoutDashboard className="w-3.5 h-3.5 mr-1.5" />
                 <span>Task Manager</span>
               </div>
-              <ChevronRight className="w-3.5 h-3.5 mx-1.5 text-slate-300" />
-              <span className="text-slate-900 font-bold">{activePage.label}</span>
+              <ChevronRight className="w-3.5 h-3.5 mx-1.5 text-slate-700" />
+              <span className="text-white font-bold">{activePage.label}</span>
             </div>
           </div>
 
           <div className="flex items-center gap-2 md:gap-4">
             <div className="hidden md:flex items-center relative group">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 group-focus-within:text-brand-500 transition-colors" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500 group-focus-within:text-brand-500 transition-colors" />
               <input 
                 type="text" 
                 placeholder="Search..." 
-                className="bg-slate-100/50 border border-slate-200/60 pl-9 pr-3 py-1.5 rounded-lg text-xs focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:bg-white focus:border-brand-500 w-48 lg:w-72 transition-all font-medium"
+                className="bg-white/5 border border-white/5 pl-9 pr-3 py-1.5 rounded-lg text-xs focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:bg-white/10 focus:border-white/10 w-48 lg:w-72 transition-all font-medium text-white placeholder:text-slate-600"
               />
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-0.5 border border-slate-200 px-1 rounded bg-white text-[9px] text-slate-400 font-bold">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-0.5 border border-white/10 px-1 rounded bg-dark-bg text-[9px] text-slate-500 font-bold">
                 <span className="mt-0.5">⌘</span>
                 <span>K</span>
               </div>
             </div>
 
             <div className="flex items-center gap-1.5">
-              <button className="p-2 hover:bg-slate-100 rounded-lg relative text-slate-500 transition-all active:scale-95 group">
+              <button className="p-2 hover:bg-white/5 rounded-lg relative text-slate-400 transition-all active:scale-95 group">
                 <Bell className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full border border-white shadow-sm"></span>
+                <span className="absolute top-2.5 right-2.5 w-1.5 h-1.5 bg-brand-500 rounded-full border border-dark-bg shadow-sm"></span>
               </button>
               
-              <div className="hidden lg:block w-px h-6 bg-slate-200/60 mx-1"></div>
+              <div className="hidden lg:block w-px h-6 bg-white/10 mx-1"></div>
               
               <button 
                 onClick={() => navigate('/tasks')}
-                className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg shadow-sm transition-all active:scale-95 text-[11px] font-bold uppercase tracking-wider"
+                className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 bg-brand-600 hover:bg-brand-500 text-white rounded-lg shadow-sm transition-all active:scale-95 text-[11px] font-bold uppercase tracking-wider"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>New Task</span>

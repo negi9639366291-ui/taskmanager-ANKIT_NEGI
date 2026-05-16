@@ -15,6 +15,11 @@
   --color-brand-700: #4338ca;
   --color-brand-800: #3730a3;
   --color-brand-900: #312e81;
+
+  --color-dark-bg: #0B0B0F;
+  --color-dark-surface: #111217;
+  --color-dark-card: #151821;
+  --color-dark-border: rgba(255, 255, 255, 0.05);
 }
 
 @layer base {
@@ -28,8 +33,16 @@
     @apply font-sans text-slate-900 bg-[#f8fafc];
   }
 
+  body.dashboard-dark {
+    @apply bg-dark-bg text-slate-200;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight text-slate-900 font-bold;
+  }
+
+  .dashboard-dark h1, .dashboard-dark h2, .dashboard-dark h3, .dashboard-dark h4, .dashboard-dark h5, .dashboard-dark h6 {
+    @apply text-white;
   }
 }
 
