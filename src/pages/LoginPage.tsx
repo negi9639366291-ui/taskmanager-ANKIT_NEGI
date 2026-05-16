@@ -52,7 +52,7 @@ export default function LoginPage() {
               <Command className="text-white w-6 h-6" />
             </div>
             <div className="flex flex-col items-start">
-              <span className="font-display font-black text-2xl tracking-tighter text-white leading-none italic uppercase">VECTA</span>
+              <span className="font-display font-black text-2xl tracking-tighter text-white leading-none italic uppercase">Task Manager</span>
               <span className="text-[7px] text-slate-700 uppercase tracking-[0.4em] font-black mt-1">Intelligence Protocol</span>
             </div>
           </Link>
@@ -91,7 +91,7 @@ export default function LoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="AGENT@VECTA.IO"
+                  placeholder="AGENT@TASKMANAGER.IO"
                   className="w-full pl-5 pr-12 h-14 bg-white/[0.02] border border-white/[0.05] rounded-2xl focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500/50 focus:bg-white/[0.04] transition-all font-black text-[11px] text-white placeholder:text-slate-800 tracking-[0.1em]"
                 />
                 <Globe className="absolute right-5 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-slate-800 group-focus-within/input:text-brand-500 transition-colors" />

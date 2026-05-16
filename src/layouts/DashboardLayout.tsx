@@ -78,7 +78,7 @@ export default function DashboardLayout() {
               <Command className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="font-display font-black text-xl text-white leading-none tracking-tighter italic">VECTA</h1>
+              <h1 className="font-display font-black text-xl text-white leading-none tracking-tighter italic uppercase">Task Manager</h1>
               <p className="text-[8px] text-slate-700 uppercase tracking-[0.3em] font-black mt-1">Intelligence v1.0</p>
             </div>
           </div>

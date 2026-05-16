@@ -30,7 +30,7 @@ export default function LandingPage() {
                 <Command className="text-white w-6 h-6" />
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-black text-2xl tracking-tighter text-white leading-none italic">VECTA</span>
+                <span className="font-display font-black text-2xl tracking-tighter text-white leading-none italic">TASK MANAGER</span>
                 <span className="text-[7px] text-slate-600 uppercase tracking-[0.4em] font-black mt-1">Intelligence Protocol</span>
               </div>
             </div>
@@ -80,7 +80,7 @@ export default function LandingPage() {
             </h1>
             
             <p className="text-base md:text-lg text-slate-600 mb-16 max-w-2xl mx-auto leading-relaxed font-bold uppercase tracking-[0.25em]">
-              VECTA fuses deep tactical project management with hyper-fidelity intelligence to stabilize your core operations.
+              Task Manager fuses deep tactical project management with hyper-fidelity intelligence to stabilize your core operations.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -148,7 +148,7 @@ export default function LandingPage() {
                   </div>
                   <h3 className="text-4xl font-display font-black text-white mb-6 tracking-tight italic">Project Neural Matrix</h3>
                   <p className="text-xl text-slate-600 max-w-lg mb-12 leading-relaxed font-bold uppercase tracking-tight">
-                    VECTA reconfigures the way you think about mission flow. It's an intelligent neural assistant for your team.
+                    Task Manager reconfigures the way you think about mission flow. It's an intelligent neural assistant for your team.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-10">
@@ -203,7 +203,7 @@ export default function LandingPage() {
               </div>
               <h3 className="text-xl font-black text-white mb-5 tracking-[0.3em] uppercase italic">Flux Core UI</h3>
               <p className="text-slate-600 text-[11px] leading-relaxed font-bold uppercase tracking-widest">
-                The full tactical power of the VECTA engine optimized for high-intensity mobile operations.
+                The full tactical power of the Task Manager engine optimized for high-intensity mobile operations.
               </p>
             </div>
           </div>
@@ -217,7 +217,7 @@ export default function LandingPage() {
             <div className="relative z-10">
               <h2 className="text-6xl md:text-9xl font-display font-black text-white mb-12 tracking-tighter leading-none italic uppercase">Join the Elite.</h2>
               <p className="text-slate-600 text-xl mb-16 max-w-xl mx-auto font-black uppercase tracking-[0.4em] text-[14px]">
-                VECTA is the master deployment strategy for world-class technical squads.
+                Task Manager is the master deployment strategy for world-class technical squads.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
                 <Link 
@@ -246,7 +246,7 @@ export default function LandingPage() {
                 <div className="w-10 h-10 bg-brand-600 rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.3)]">
                   <Command className="w-6 h-6 text-white" />
                 </div>
-                <span className="font-display font-black text-2xl tracking-tighter text-white leading-none italic">VECTA</span>
+                <span className="font-display font-black text-2xl tracking-tighter text-white leading-none italic">TASK MANAGER</span>
               </div>
               <p className="text-slate-700 text-[10px] font-black uppercase tracking-[0.4em] leading-relaxed max-w-[240px]">
                 High-fidelity engineering for advanced strategic coordination.
@@ -271,7 +271,7 @@ export default function LandingPage() {
           </div>
 
           <div className="pt-16 border-t border-white/[0.02] flex flex-col md:flex-row justify-between items-center gap-12">
-            <p className="text-[10px] font-black text-slate-800 uppercase tracking-[0.6em] italic">© 2026 VECTA INTELLIGENCE LABS. ALL UNITS SECURED.</p>
+            <p className="text-[10px] font-black text-slate-800 uppercase tracking-[0.6em] italic">© 2026 TASK MANAGER INTELLIGENCE LABS. ALL UNITS SECURED.</p>
             <div className="flex items-center gap-6 text-[10px] font-black text-slate-800 uppercase tracking-[0.3em]">
               <span>CORE STATUS:</span>
               <span className="flex items-center gap-3 text-brand-500 bg-brand-500/5 px-6 py-2 rounded-full border border-brand-500/10">
