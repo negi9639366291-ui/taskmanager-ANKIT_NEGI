@@ -1,0 +1,8 @@
+{
+  "name": "TeamFlow - Task Manager",
+  "description": "A premium team task management platform with role-based access, real-time analytics, and kanban workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
