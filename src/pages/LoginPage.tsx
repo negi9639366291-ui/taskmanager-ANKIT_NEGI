@@ -51,7 +51,7 @@ export default function LoginPage() {
             <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center shadow-lg shadow-slate-900/10 group-hover:bg-brand-600 transition-colors">
               <Command className="text-white w-5 h-5 group-hover:rotate-12 transition-transform" />
             </div>
-            <span className="font-display font-bold text-xl tracking-tight text-slate-900">SyncPro</span>
+            <span className="font-display font-bold text-xl tracking-tight text-slate-900">Task Manager</span>
           </Link>
           <h1 className="text-2xl font-display font-bold text-slate-900 tracking-tight leading-none mb-3">Initialize Session</h1>
           <p className="text-slate-400 font-medium font-sans text-sm">Resume command over mission trajectory.</p>
@@ -88,7 +88,7 @@ export default function LoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@syncpro.io"
+                  placeholder="name@taskmanager.io"
                   className="w-full pl-4 pr-10 h-12 bg-slate-50/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500 focus:bg-white transition-all font-semibold text-sm text-slate-700 placeholder:text-slate-400"
                 />
                 <Globe className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300 group-focus-within:text-brand-500 transition-colors" />

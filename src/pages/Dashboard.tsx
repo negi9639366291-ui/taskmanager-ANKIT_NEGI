@@ -102,44 +102,43 @@ export default function Dashboard() {
   return (
     <div className="space-y-6 pb-12 font-sans text-slate-900">
       {/* Welcome Hero */}
-      <section className="relative overflow-hidden rounded-2xl bg-slate-900 px-6 py-8 md:px-10 md:py-12 shadow-sm">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-600/10 to-transparent pointer-events-none" />
-        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-500/10 rounded-full blur-[80px] pointer-events-none" />
+      <section className="relative overflow-hidden rounded-xl bg-slate-900 px-6 py-6 md:px-8 md:py-8 shadow-sm">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-600/5 to-transparent pointer-events-none" />
         
-        <div className="relative z-10 max-w-xl">
+        <div className="relative z-10 max-w-2xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 backdrop-blur-md rounded-lg text-brand-400 text-[9px] font-bold uppercase tracking-wider mb-4 border border-white/5"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/5 backdrop-blur-md rounded-md text-brand-400 text-[8px] font-bold uppercase tracking-widest mb-3 border border-white/5"
           >
-            <span className="w-1.5 h-1.5 bg-brand-500 rounded-full animate-pulse"></span>
-            Operational Status: Optimized
+            <span className="w-1 h-1 bg-brand-500 rounded-full animate-pulse"></span>
+            Operational Status: Online
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-2xl md:text-3xl font-display font-bold text-white mb-3 tracking-tight"
+            className="text-xl md:text-2xl font-display font-bold text-white mb-2 tracking-tight"
           >
             Welcome back, <span className="text-brand-400">{user?.name.split(' ')[0]}</span>.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-slate-400 text-sm mb-6 max-w-md leading-normal"
+            className="text-slate-400 text-xs mb-5 max-w-lg leading-relaxed"
           >
-            Your tactical efficiency is up <span className="text-white font-bold">12%</span>. There are 5 high-priority objectives targeting this sprint.
+            Efficiency is up <span className="text-white font-bold">12%</span>. There are 5 high-priority objectives targeting this sprint.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-wrap gap-3"
+            className="flex flex-wrap gap-2.5"
           >
-            <button className="h-9 px-5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-2 group active:scale-95 text-[11px] uppercase tracking-wider">
-              Review Backlog
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            <button className="h-8 px-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-1.5 group active:scale-95 text-[10px] uppercase tracking-wider">
+              Manage Tasks
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </button>
-            <button className="h-9 px-5 bg-white/5 hover:bg-white/10 text-white font-bold rounded-lg backdrop-blur-md border border-white/10 transition-all text-[11px] uppercase tracking-wider">
-              Squad Status
+            <button className="h-8 px-4 bg-white/5 hover:bg-white/10 text-white font-bold rounded-lg backdrop-blur-md border border-white/10 transition-all text-[10px] uppercase tracking-wider">
+              Team Status
             </button>
           </motion.div>
         </div>
@@ -245,27 +244,27 @@ export default function Dashboard() {
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="bg-slate-900 p-6 rounded-xl text-white shadow-sm relative overflow-hidden group"
+            className="bg-slate-900 p-5 rounded-xl text-white shadow-sm relative overflow-hidden group"
           >
-            <h4 className="text-base font-bold mb-0.5 relative z-10 italic">Strategic Target</h4>
-            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-wider mb-8 relative z-10">Success Index</p>
+            <h4 className="text-sm font-bold mb-0.5 relative z-10 italic">Quarterly Target</h4>
+            <p className="text-slate-400 text-[9px] font-bold uppercase tracking-wider mb-6 relative z-10">Success Metrics</p>
             
-            <div className="relative z-10 mb-6">
+            <div className="relative z-10 mb-5">
                <div className="flex justify-between items-end mb-2">
-                 <span className="text-2xl font-bold">84%</span>
-                 <span className="text-[9px] font-bold text-brand-400 uppercase tracking-widest">Optimized</span>
+                 <span className="text-xl font-bold">84%</span>
+                 <span className="text-[8px] font-bold text-brand-400 uppercase tracking-widest">Optimized</span>
                </div>
-               <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+               <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
                 <motion.div 
-                  initial={{ width: 0 }}
-                  animate={{ width: '84%' }}
-                  transition={{ duration: 1, ease: 'easeOut' }}
-                  className="h-full bg-brand-500 rounded-full"
+                   initial={{ width: 0 }}
+                   animate={{ width: '84%' }}
+                   transition={{ duration: 1, ease: 'easeOut' }}
+                   className="h-full bg-brand-500 rounded-full"
                 />
               </div>
             </div>
             
-            <div className="flex justify-between text-[9px] font-bold text-slate-500 relative z-10 uppercase tracking-wider">
+            <div className="flex justify-between text-[8px] font-bold text-slate-500 relative z-10 uppercase tracking-widest">
               <span>Goal: 100 Missions</span>
               <span className="text-white">16 Left</span>
             </div>
@@ -275,40 +274,40 @@ export default function Dashboard() {
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="bg-white p-6 rounded-xl border border-slate-200/60 shadow-sm flex-1 flex flex-col"
+            className="bg-white p-5 rounded-xl border border-slate-200/60 shadow-sm flex-1 flex flex-col"
           >
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-base font-bold text-slate-900">Live Pulse</h3>
-              <div className="flex items-center gap-1.5 px-2 py-1 bg-brand-50 text-brand-600 rounded-md text-[9px] font-bold uppercase tracking-wider">
+            <div className="flex items-center justify-between mb-5">
+              <h3 className="text-sm font-bold text-slate-900">Live Pulse</h3>
+              <div className="flex items-center gap-1 px-2 py-0.5 bg-brand-50 text-brand-600 rounded text-[8px] font-bold uppercase tracking-wider">
                 <span className="w-1 h-1 bg-brand-500 rounded-full animate-pulse"></span>
                 Event Log
               </div>
             </div>
-            <div className="space-y-6 flex-1">
+            <div className="space-y-5 flex-1">
               {activities.slice(0, 3).map((activity, idx) => {
                 const actor = team.find(u => u.id === activity.userId);
                 return (
-                  <div key={idx} className="flex gap-3 group">
+                  <div key={idx} className="flex gap-2.5 group">
                     <div className="relative flex-shrink-0">
-                      <div className="w-8 h-8 rounded-lg overflow-hidden border border-slate-100 shadow-sm">
+                      <div className="w-7 h-7 rounded-lg overflow-hidden border border-slate-100 shadow-sm">
                         <img 
-                          src={actor?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${activity.userId}`} 
-                          className="w-full h-full object-cover" 
-                          alt="User"
+                           src={actor?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${activity.userId}`} 
+                           className="w-full h-full object-cover" 
+                           alt="User"
                         />
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-bold text-slate-900 leading-none mb-1 truncate">
+                      <p className="text-[10px] font-bold text-slate-900 leading-none mb-1 truncate">
                         {actor?.name || 'Operative'}
                       </p>
-                      <p className="text-[10px] font-medium text-slate-400 capitalize">{activity.action}</p>
+                      <p className="text-[9px] font-medium text-slate-400 capitalize">{activity.action}</p>
                     </div>
                   </div>
                 );
               })}
             </div>
-            <button className="w-full mt-6 py-2 bg-slate-50 hover:bg-slate-100 text-[10px] font-bold text-slate-500 rounded-lg transition-all uppercase tracking-wider">
+            <button className="w-full mt-5 py-1.5 bg-slate-50 hover:bg-slate-100 text-[9px] font-bold text-slate-500 rounded-lg transition-all uppercase tracking-widest">
               Full Archive
             </button>
           </motion.div>
@@ -324,8 +323,8 @@ export default function Dashboard() {
         <div className="lg:col-span-8 bg-white rounded-xl border border-slate-200/60 shadow-sm overflow-hidden">
           <div className="px-6 py-4 flex items-center justify-between border-b border-slate-50">
             <div>
-              <h3 className="text-base font-bold text-slate-900">Strategic Projects</h3>
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">Live initiative status</p>
+              <h3 className="text-base font-bold text-slate-900">Projects Overview</h3>
+              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">Real-time status</p>
             </div>
             <button className="w-8 h-8 bg-slate-50 hover:bg-brand-500 hover:text-white rounded-lg transition-all flex items-center justify-center text-slate-400 shadow-sm active:scale-95">
               <Plus className="w-4 h-4" />
@@ -389,31 +388,31 @@ export default function Dashboard() {
         </div>
 
         {/* Small Analytics Widget */}
-        <div className="lg:col-span-4 bg-white p-6 rounded-xl border border-slate-200/60 shadow-sm flex flex-col items-center justify-center text-center group">
-          <div className="w-20 h-20 rounded-full border-[6px] border-slate-50 flex items-center justify-center mb-6 relative">
-             <svg className="w-full h-full absolute -rotate-90">
+        <div className="lg:col-span-4 bg-white p-5 rounded-xl border border-slate-200/60 shadow-sm flex flex-col items-center justify-center text-center group">
+          <div className="w-16 h-16 rounded-full border-[4px] border-slate-50 flex items-center justify-center mb-4 relative">
+             <svg className="w-full h-full absolute -rotate-90 p-0.5">
                 <circle 
-                  cx="40" cy="40" r="34" 
-                  fill="none" stroke="currentColor" 
-                  strokeWidth="6" 
-                  className="text-brand-500"
-                  strokeDasharray="213"
-                  strokeDashoffset="60"
-                  style={{ transform: 'translate(4px, 4px)' }}
+                   cx="31" cy="31" r="28" 
+                   fill="none" stroke="currentColor" 
+                   strokeWidth="4" 
+                   className="text-brand-500"
+                   strokeDasharray="176"
+                   strokeDashoffset="50"
+                   style={{ transform: 'translate(1px, 1px)' }}
                 />
              </svg>
-             <span className="text-xl font-bold text-slate-900 group-hover:scale-110 transition-transform">72%</span>
+             <span className="text-base font-bold text-slate-900 group-hover:scale-110 transition-transform">72%</span>
           </div>
-          <h4 className="text-base font-bold text-slate-900 mb-1.5">Team Efficiency</h4>
-          <p className="text-[11px] font-medium text-slate-500 mb-6 leading-relaxed">System-calculated throughput across all active squad members.</p>
+          <h4 className="text-sm font-bold text-slate-900 mb-1">Team Efficiency</h4>
+          <p className="text-[10px] font-medium text-slate-400 mb-5 leading-relaxed max-w-[200px]">Throughput across all active members.</p>
           <div className="flex gap-2 w-full">
-            <div className="flex-1 bg-slate-50 p-3 rounded-lg border border-slate-100">
-              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Tasks</p>
-              <p className="text-lg font-bold text-slate-900">128</p>
+            <div className="flex-1 bg-slate-50/50 p-2.5 rounded-lg border border-slate-100">
+              <p className="text-[8px] font-bold text-slate-400 uppercase tracking-wider mb-0.5 text-center">Tasks</p>
+              <p className="text-base font-bold text-slate-900 text-center">128</p>
             </div>
-            <div className="flex-1 bg-slate-50 p-3 rounded-lg border border-slate-100">
-              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Risks</p>
-              <p className="text-lg font-bold text-red-600">04</p>
+            <div className="flex-1 bg-slate-50/50 p-2.5 rounded-lg border border-slate-100">
+              <p className="text-[8px] font-bold text-slate-400 uppercase tracking-wider mb-0.5 text-center">Risks</p>
+              <p className="text-base font-bold text-red-600 text-center">04</p>
             </div>
           </div>
         </div>

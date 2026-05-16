@@ -32,7 +32,7 @@ export default function SignupPage() {
       if (success) {
         navigate('/dashboard');
       } else {
-        setError('This identity is already synchronized with SyncPro.');
+        setError('This identity is already synchronized with Task Manager.');
         setIsLoading(false);
       }
     } catch (err) {
@@ -52,7 +52,7 @@ export default function SignupPage() {
             <div className="w-10 h-10 bg-white/10 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-brand-600 transition-colors shadow-2xl">
               <Command className="text-white w-5 h-5" />
             </div>
-            <span className="font-display font-bold text-xl tracking-tight text-white">SyncPro</span>
+            <span className="font-display font-bold text-xl tracking-tight text-white">Task Manager</span>
           </Link>
           
           <h2 className="text-4xl md:text-6xl font-display font-bold text-white tracking-tight leading-[0.95] mb-10 italic">
@@ -190,7 +190,7 @@ export default function SignupPage() {
           </p>
 
           <p className="mt-12 text-center text-[8px] text-slate-400 font-bold uppercase tracking-widest leading-relaxed max-w-[240px] mx-auto">
-            By engaging, you authorize SyncPro to synchronize your tactical data.
+            By engaging, you authorize Task Manager to synchronize your tactical data.
           </p>
         </div>
       </div>

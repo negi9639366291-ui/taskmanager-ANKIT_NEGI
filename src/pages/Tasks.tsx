@@ -76,9 +76,9 @@ export default function Tasks() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-display font-bold text-slate-900 tracking-tight mb-1">Operations Backlog</h1>
+          <h1 className="text-2xl font-display font-bold text-slate-900 tracking-tight mb-1">Tasks</h1>
           <p className="text-slate-500 font-medium max-w-md text-sm leading-relaxed">
-            Monitor work streams and optimize squad throughput in real-time.
+            Monitor work streams and optimize team throughput in real-time.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -102,7 +102,7 @@ export default function Tasks() {
               className="h-9 px-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-2 group active:scale-95 text-[11px] uppercase tracking-wider"
             >
               <Plus className="w-4 h-4" />
-              <span>Deploy Task</span>
+              <span>Add Task</span>
             </button>
           )}
         </div>
@@ -116,7 +116,7 @@ export default function Tasks() {
           </div>
           <input 
             type="text" 
-            placeholder="Search objectives..."
+            placeholder="Search tasks..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-13 pr-4 py-2 bg-white border border-slate-200/60 rounded-xl focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500 transition-all font-medium text-slate-600 text-sm shadow-sm"
@@ -185,7 +185,7 @@ export default function Tasks() {
                       animate={{ opacity: 1 }}
                       className="py-12 border-2 border-dashed border-slate-200/50 rounded-xl flex flex-col items-center justify-center text-center opacity-30"
                     >
-                      <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Sector Clear</p>
+            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">No tasks</p>
                     </motion.div>
                   )}
                 </div>
@@ -203,10 +203,10 @@ export default function Tasks() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-slate-50/50 border-b border-slate-100">
-                  <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Objective</th>
-                  <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Context</th>
-                  <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Asset</th>
-                  <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest text-right">Deadline</th>
+                  <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Task</th>
+                  <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Project</th>
+                  <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Assigned To</th>
+                  <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest text-right">Due Date</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-50">
@@ -235,7 +235,7 @@ export default function Tasks() {
                     <td className="px-6 py-3">
                       <div className="flex items-center gap-1.5 px-2 py-1 bg-slate-100/50 rounded-lg w-fit border border-slate-100">
                         <span className="text-[9px] font-bold text-slate-600 uppercase tracking-wider">
-                          {projects.find(p => p.id === task.projectId)?.name || 'Nexus'}
+                          {projects.find(p => p.id === task.projectId)?.name || 'General'}
                         </span>
                       </div>
                     </td>
@@ -282,8 +282,8 @@ export default function Tasks() {
               <div className="p-6 md:p-8 max-h-[90vh] overflow-y-auto">
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h2 className="text-xl font-bold text-slate-900 tracking-tight">Deploy Task</h2>
-                    <p className="text-slate-400 text-xs font-medium mt-1">Specify parameters for squad engagement.</p>
+                    <h2 className="text-xl font-bold text-slate-900 tracking-tight">Add Task</h2>
+                    <p className="text-slate-400 text-xs font-medium mt-1">Specify task details for the team.</p>
                   </div>
                   <button 
                     onClick={() => setIsModalOpen(false)}
@@ -295,7 +295,7 @@ export default function Tasks() {
 
                 <form onSubmit={handleCreate} className="space-y-4">
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider ml-1">Objective Title</label>
+                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider ml-1">Task Title</label>
                     <input 
                       type="text" required
                       value={newTitle} onChange={(e) => setNewTitle(e.target.value)}
@@ -305,7 +305,7 @@ export default function Tasks() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider ml-1">Contextual Intel</label>
+                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider ml-1">Description</label>
                     <textarea 
                       required
                       rows={3}
@@ -323,7 +323,7 @@ export default function Tasks() {
                         value={newProjectId} onChange={(e) => setNewProjectId(e.target.value)}
                         className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:text-sm font-bold text-slate-600 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1rem_1rem] bg-[right_1rem_center] bg-no-repeat text-xs"
                       >
-                        <option value="">Nexus</option>
+                        <option value="">General</option>
                         {projects.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
                       </select>
                     </div>
@@ -347,9 +347,9 @@ export default function Tasks() {
                       <select 
                         required
                         value={newAssignedTo} onChange={(e) => setNewAssignedTo(e.target.value)}
-                        className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:text-sm font-bold text-slate-600 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1rem_1rem] bg-[right_1rem_center] bg-no-repeat text-xs"
+                        className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:text-sm font-bold text-slate-600 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1rem_1rem] bg-[right_1rem_center] bg-no-repeat text-xs"
                       >
-                        <option value="">Asset</option>
+                        <option value="">Member</option>
                         {team.map(u => <option key={u.id} value={u.id}>{u.name}</option>)}
                       </select>
                     </div>
@@ -367,7 +367,7 @@ export default function Tasks() {
                     type="submit"
                     className="w-full h-11 mt-4 bg-slate-900 hover:bg-brand-600 text-white rounded-lg font-bold text-xs uppercase tracking-wider shadow-sm transition-all flex items-center justify-center gap-2 active:scale-95"
                   >
-                    <span>Deploy Tactical Objective</span>
+                    <span>Create Task</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </form>
@@ -416,7 +416,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, team, projects, updateTask, d
             {task.priority}
           </div>
           <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider truncate max-w-[120px]">
-            {project?.name || 'Tactical Nexus'}
+            {project?.name || 'Task Manager'}
           </span>
         </div>
         <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-200">

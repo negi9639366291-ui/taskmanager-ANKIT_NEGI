@@ -39,9 +39,9 @@ export default function Profile() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-display font-bold text-slate-900 tracking-tight mb-1">Account Config</h1>
+          <h1 className="text-2xl font-display font-bold text-slate-900 tracking-tight mb-1">Account</h1>
           <p className="text-slate-500 font-medium max-w-md text-sm leading-relaxed">
-            Manage your digital identity and workspace preferences.
+            Manage your profile and preferences.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -92,11 +92,11 @@ export default function Profile() {
               <div className="w-full grid grid-cols-2 gap-4 border-t border-slate-50 pt-6">
                 <div className="text-center">
                   <p className="text-lg font-bold text-slate-900">{userTasks.length}</p>
-                  <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Targeted</p>
+                  <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Tasks</p>
                 </div>
                 <div className="text-center">
                   <p className="text-lg font-bold text-slate-900">{completedTasks.length}</p>
-                  <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Achieved</p>
+                  <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Done</p>
                 </div>
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function Profile() {
                               </div>
                               <div>
                                 <p className="text-[11px] font-bold text-slate-900 uppercase tracking-tight">{p.name}</p>
-                                <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Linked Mission</p>
+                                <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Linked Project</p>
                               </div>
                             </div>
                             <button className="p-2 hover:bg-white rounded-lg text-slate-400 hover:text-brand-600 transition-all">
@@ -238,7 +238,7 @@ export default function Profile() {
                     exit={{ opacity: 0, x: -10 }}
                     className="space-y-6"
                   >
-                     <h4 className="text-lg font-bold text-slate-900 tracking-tight mb-6">Core Protocols</h4>
+                     <h4 className="text-lg font-bold text-slate-900 tracking-tight mb-6">Preferences</h4>
                      <div className="space-y-3">
                         {[
                           { label: 'Real-time Sync', desc: 'Auto-broadcast status shifts.', icon: Zap, active: true },
@@ -270,11 +270,11 @@ export default function Profile() {
           {/* Dangerous Zone */}
           <div className="bg-red-50/30 rounded-xl p-6 border border-red-100 flex items-center justify-between">
             <div>
-              <h4 className="text-[10px] font-bold text-red-600 uppercase tracking-widest mb-1 italic">Termination</h4>
+              <h4 className="text-[10px] font-bold text-red-600 uppercase tracking-widest mb-1 italic">Danger Zone</h4>
               <p className="text-[11px] font-bold text-red-900/50 leading-none">Permanently delete account.</p>
             </div>
             <button className="h-9 px-6 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg text-[10px] uppercase tracking-wider shadow-sm active:scale-95 transition-all">
-              Scrap Archive
+              Delete Account
             </button>
           </div>
         </div>

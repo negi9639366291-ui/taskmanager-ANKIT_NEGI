@@ -55,16 +55,16 @@ export default function Team() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-display font-bold text-slate-900 tracking-tight mb-1">Team Squad</h1>
+          <h1 className="text-2xl font-display font-bold text-slate-900 tracking-tight mb-1">Team</h1>
           <p className="text-slate-500 font-medium max-w-md text-sm leading-relaxed">
-            Manage your high-performance squad and mission contributions.
+            Manage your team and track member contributions.
           </p>
         </div>
         <div className="flex items-center gap-3">
           {isAdmin && (
             <button className="h-9 px-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-2 group active:scale-95 text-[11px] uppercase tracking-wider">
               <UserPlus className="w-4 h-4" />
-              <span>Deploy Member</span>
+              <span>Add Member</span>
             </button>
           )}
         </div>
@@ -73,10 +73,10 @@ export default function Team() {
       {/* Team Stats Quick Overview */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {[
-          { label: 'Active Squad', value: team.length, icon: Users, color: 'text-brand-600', bg: 'bg-brand-50' },
+          { label: 'Total Members', value: team.length, icon: Users, color: 'text-brand-600', bg: 'bg-brand-50' },
           { label: 'Avg Velocity', value: '84%', icon: Activity, color: 'text-emerald-600', bg: 'bg-emerald-50' },
           { label: 'Peak Capacity', value: '12/15', icon: TrendingUp, color: 'text-violet-600', bg: 'bg-violet-50' },
-          { label: 'Missions Done', value: '428', icon: Trophy, color: 'text-amber-600', bg: 'bg-amber-50' },
+          { label: 'Tasks Done', value: '428', icon: Trophy, color: 'text-amber-600', bg: 'bg-amber-50' },
         ].map((stat, i) => (
           <div key={i} className="bg-white p-4 rounded-xl border border-slate-200/60 shadow-sm flex items-center gap-3">
             <div className={`w-9 h-9 ${stat.bg} rounded-lg flex items-center justify-center ${stat.color}`}>
@@ -151,7 +151,7 @@ export default function Team() {
                    <span className={`px-2 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider border transition-all ${
                     member.role === 'ADMIN' ? "bg-brand-50 text-brand-600 border-brand-100" : "bg-emerald-50 text-emerald-600 border-emerald-100"
                   }`}>
-                    {member.role === 'ADMIN' ? 'Strategic Lead' : 'Squad Member'}
+                    {member.role === 'ADMIN' ? 'Admin' : 'Member'}
                   </span>
                 </div>
               </div>

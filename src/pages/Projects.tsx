@@ -76,7 +76,7 @@ export default function Projects() {
         <div>
           <h1 className="text-2xl font-display font-bold text-slate-900 tracking-tight mb-1">Projects</h1>
           <p className="text-slate-500 font-medium max-w-md text-sm leading-relaxed">
-            Track and manage your high-level initiatives and major milestones.
+            Manage your high-level initiatives and major goals.
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -291,19 +291,19 @@ export default function Projects() {
           <div className="w-24 h-24 bg-slate-50 rounded-[2.5rem] flex items-center justify-center mx-auto mb-8 shadow-inner">
             <Briefcase className="w-12 h-12 text-slate-200" />
           </div>
-          <h3 className="text-2xl font-display font-bold text-slate-900 mb-3">No initiatives launched</h3>
-          <p className="text-slate-500 font-medium max-w-sm mx-auto mb-10 leading-relaxed">
-            Your workspace is quiet. Start your first mission to mobilize the team and track progress towards your major goals.
-          </p>
-          {isAdmin && (
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-[1.5rem] shadow-xl shadow-brand-500/20 transition-all flex items-center gap-3 mx-auto active:scale-95"
-            >
-              <Plus className="w-6 h-6" />
-              <span>Launch Mission</span>
-            </button>
-          )}
+            <h3 className="text-2xl font-display font-bold text-slate-900 mb-3">No projects found</h3>
+            <p className="text-slate-500 font-medium max-w-sm mx-auto mb-10 leading-relaxed">
+              Your workspace is quiet. Start your first project to mobilize the team and track progress towards your major goals.
+            </p>
+            {isAdmin && (
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-[1.5rem] shadow-xl shadow-brand-500/20 transition-all flex items-center gap-3 mx-auto active:scale-95"
+              >
+                <Plus className="w-6 h-6" />
+                <span>Create Project</span>
+              </button>
+            )}
         </motion.div>
       )}
 
@@ -328,7 +328,7 @@ export default function Projects() {
                 <div className="flex justify-between items-start mb-6">
                   <div>
                     <h2 className="text-xl font-bold text-slate-900 tracking-tight">New Project</h2>
-                    <p className="text-slate-400 text-xs font-medium mt-1">Define the core mission details.</p>
+                    <p className="text-slate-400 text-xs font-medium mt-1">Define the project details.</p>
                   </div>
                   <button 
                     onClick={() => setIsModalOpen(false)}
@@ -386,7 +386,7 @@ export default function Projects() {
                     type="submit"
                     className="w-full h-11 mt-4 bg-slate-900 hover:bg-brand-600 text-white rounded-lg font-bold text-xs uppercase tracking-wider shadow-sm transition-all flex items-center justify-center gap-2 group active:scale-95"
                   >
-                    <span>Create Mission</span>
+                    <span>Create Project</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </form>

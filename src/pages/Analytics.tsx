@@ -69,8 +69,8 @@ export default function Analytics() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-display font-bold text-slate-900 tracking-tight mb-1">Intelligence</h1>
-          <p className="text-slate-500 font-medium max-w-md text-sm leading-relaxed">
+          <h1 className="text-xl font-display font-bold text-slate-900 tracking-tight mb-1">Analytics</h1>
+          <p className="text-slate-500 font-medium max-w-md text-xs leading-relaxed">
             High-fidelity data visualization for your projects and velocity.
           </p>
         </div>
@@ -181,15 +181,15 @@ export default function Analytics() {
             <Layers className="w-5 h-5 text-brand-600 opacity-20" />
           </div>
           
-          <div className="h-[280px] w-full flex items-center justify-center">
+          <div className="h-[220px] w-full flex items-center justify-center">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={statusData}
                   cx="50%"
                   cy="50%"
-                  innerRadius={60}
-                  outerRadius={90}
+                  innerRadius={50}
+                  outerRadius={75}
                   paddingAngle={8}
                   dataKey="value"
                   animationBegin={200}

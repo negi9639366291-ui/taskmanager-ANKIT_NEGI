@@ -76,8 +76,8 @@ export default function DashboardLayout() {
               <Command className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="font-display font-bold text-lg text-white leading-tight">SyncPro</h1>
-              <p className="text-[9px] text-slate-500 uppercase tracking-[0.15em] font-bold">Nexus v1.0</p>
+              <h1 className="font-display font-bold text-lg text-white leading-tight">Task Manager</h1>
+            <p className="text-[9px] text-slate-500 uppercase tracking-[0.15em] font-bold">Standard Edition v1.0</p>
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function DashboardLayout() {
               className="w-full flex items-center justify-center gap-2 px-3 py-1.5 bg-slate-800 hover:bg-red-500/10 hover:text-red-500 text-slate-400 rounded-lg transition-all text-[10px] font-black uppercase tracking-wider"
             >
               <LogOut className="w-3.5 h-3.5" />
-              <span>Detach Session</span>
+              <span>Log Out</span>
             </button>
           </div>
         </div>
@@ -168,7 +168,7 @@ export default function DashboardLayout() {
                 <div className="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/20 rotate-3 transform">
                   <Command className="w-6 h-6 text-white" />
                 </div>
-                <h1 className="font-display font-bold text-xl text-white">SyncPro</h1>
+                <h1 className="font-display font-bold text-xl text-white">Task Manager</h1>
               </div>
               <button 
                 onClick={() => setIsMobileOpen(false)}
@@ -227,7 +227,7 @@ export default function DashboardLayout() {
             <div className="hidden sm:flex items-center text-xs font-semibold">
               <div className="flex items-center text-slate-400">
                 <LayoutDashboard className="w-3.5 h-3.5 mr-1.5" />
-                <span>SyncPro</span>
+                <span>Task Manager</span>
               </div>
               <ChevronRight className="w-3.5 h-3.5 mx-1.5 text-slate-300" />
               <span className="text-slate-900 font-bold">{activePage.label}</span>

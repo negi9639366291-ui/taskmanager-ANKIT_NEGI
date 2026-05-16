@@ -28,7 +28,7 @@ export default function LandingPage() {
               <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center shadow-lg shadow-brand-500/10">
                 <Command className="text-white w-4.5 h-4.5" />
               </div>
-              <span className="font-display font-bold text-lg tracking-tight text-slate-900 leading-none">SyncPro</span>
+              <span className="font-display font-bold text-lg tracking-tight text-slate-900 leading-none">Task Manager</span>
             </div>
             
             <div className="hidden lg:flex items-center gap-8">
@@ -74,7 +74,7 @@ export default function LandingPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-500 mb-10 max-w-xl mx-auto leading-relaxed font-medium">
-              SyncPro merges mission-critical task management with high-fidelity analytics to turn chaos into clarity.
+              Task Manager merges mission-critical task management with high-fidelity analytics to turn chaos into clarity.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -111,7 +111,7 @@ export default function LandingPage() {
               <div className="rounded-xl overflow-hidden border border-white/50 bg-white">
                  <img 
                   src="https://images.unsplash.com/photo-1551288049-bbda48338787?auto=format&fit=crop&q=80&w=2426" 
-                  alt="SyncPro Dashboard" 
+                  alt="Task Manager Dashboard" 
                   className="w-full opacity-90 group-hover:scale-[1.01] transition-transform duration-1000"
                 />
               </div>
@@ -137,9 +137,9 @@ export default function LandingPage() {
                   <div className="w-12 h-12 bg-brand-600/20 text-brand-400 rounded-xl flex items-center justify-center mb-6">
                     <Zap className="w-6 h-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">Neural Kanban</h3>
+                  <h3 className="text-2xl font-bold text-white mb-3">Project Canvas</h3>
                   <p className="text-base text-slate-400 max-w-lg mb-8 leading-relaxed">
-                    SyncPro rearranged the way we think about work flow. It's not just a board; it's a team brain.
+                    Task Manager rearranged the way we think about work flow. It's not just a board; it's a team assistant.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
@@ -193,7 +193,7 @@ export default function LandingPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Fluid Mobile</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                The full power of SyncPro in the palm of your hand.
+                The full power of Task Manager in the palm of your hand.
               </p>
             </div>
           </div>
@@ -205,16 +205,16 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="bg-slate-900 rounded-3xl p-16 md:p-24 text-center relative overflow-hidden">
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 tracking-tight leading-none italic">Join the Protocol.</h2>
+              <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 tracking-tight leading-none italic">Join Task Manager.</h2>
               <p className="text-slate-400 text-lg mb-10 max-w-lg mx-auto font-medium">
-                SyncPro is not just another PM tool, it's a productivity strategy.
+                Task Manager is not just another PM tool, it's a productivity strategy.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link 
                   to="/signup" 
                   className="w-full sm:w-auto bg-white text-slate-900 h-14 px-10 rounded-lg font-bold text-base hover:bg-brand-50 transition-all shadow-xl active:scale-95 flex items-center justify-center uppercase tracking-widest"
                 >
-                  Start Mission
+                  Start Now
                 </Link>
                 <div className="flex items-center gap-2 px-6 h-14 border border-white/20 rounded-lg backdrop-blur-md">
                    <p className="text-white font-bold uppercase tracking-widest text-[9px]">No credit card required</p>
@@ -232,7 +232,7 @@ export default function LandingPage() {
             <div className="col-span-2 lg:col-span-1">
               <div className="flex items-center gap-2.5 mb-6">
                 <Command className="w-6 h-6 text-brand-600" />
-                <span className="font-display font-bold text-lg tracking-tight">SyncPro</span>
+                <span className="font-display font-bold text-lg tracking-tight">Task Manager</span>
               </div>
               <p className="text-slate-500 text-xs font-medium leading-relaxed max-w-[200px]">
                 High-fidelity engineering for team coordination.
@@ -273,7 +273,7 @@ export default function LandingPage() {
           </div>
 
           <div className="pt-10 border-t border-slate-200/60 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">© 2026 SyncPro Protocol Labs.</p>
+            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">© 2026 Task Manager Labs.</p>
             <div className="flex items-center gap-2 text-[9px] font-bold text-slate-400 uppercase tracking-widest">
               <span>Status:</span>
               <span className="flex items-center gap-1.5 text-emerald-500">
