@@ -47,74 +47,77 @@ export default function LoginPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-10"
         >
-          <Link to="/" className="inline-flex items-center gap-3 mb-8 group">
-            <div className="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.2)] group-hover:bg-brand-500 transition-all">
-              <Command className="text-white w-5 h-5 group-hover:rotate-12 transition-transform" />
+          <Link to="/" className="inline-flex items-center gap-4 mb-10 group">
+            <div className="w-12 h-12 bg-brand-600 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(99,102,241,0.3)] group-hover:bg-brand-500 transition-all group-hover:rotate-6">
+              <Command className="text-white w-6 h-6" />
             </div>
-            <span className="font-display font-bold text-xl tracking-tight text-white">Task Manager</span>
+            <div className="flex flex-col items-start">
+              <span className="font-display font-black text-2xl tracking-tighter text-white leading-none italic uppercase">VECTA</span>
+              <span className="text-[7px] text-slate-700 uppercase tracking-[0.4em] font-black mt-1">Intelligence Protocol</span>
+            </div>
           </Link>
-          <h1 className="text-2xl font-display font-bold text-white tracking-tighter leading-none mb-3">Initialize Connection</h1>
-          <p className="text-slate-600 font-bold uppercase tracking-widest text-[9px]">Resume command over mission trajectory</p>
+          <h1 className="text-3xl font-display font-black text-white tracking-tighter leading-none mb-4 italic uppercase">Initialize Connection</h1>
+          <p className="text-slate-700 font-bold uppercase tracking-[0.3em] text-[9px]">Resume command over operational trajectory</p>
         </motion.div>
 
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-dark-card/40 backdrop-blur-xl p-8 md:p-10 rounded-2xl shadow-2xl border border-white/[0.03] relative overflow-hidden"
+          className="bg-white/[0.01] backdrop-blur-3xl p-10 md:p-12 rounded-[2.5rem] shadow-3xl border border-white/[0.03] relative overflow-hidden group"
         >
           {/* Form Header Accent */}
-          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-brand-600 to-indigo-600 shadow-[0_0_10px_rgba(99,102,241,0.5)]" />
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-500 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
           
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-8">
             <AnimatePresence>
               {error && (
                 <motion.div 
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="bg-rose-500/5 text-rose-500 p-4 rounded-xl text-[10px] font-bold uppercase tracking-widest border border-rose-500/20 flex items-center gap-2.5"
+                  className="bg-rose-500/5 text-rose-500 p-5 rounded-2xl text-[10px] font-black uppercase tracking-widest border border-rose-500/10 flex items-center gap-3.5"
                 >
-                  <Lock className="w-3.5 h-3.5 flex-shrink-0" />
+                  <Lock className="w-4 h-4 flex-shrink-0" />
                   {error}
                 </motion.div>
               )}
             </AnimatePresence>
             
-            <div className="space-y-2">
-              <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest ml-1">Identity Protocol (Email)</label>
-              <div className="relative group">
+            <div className="space-y-3">
+              <label className="text-[10px] font-black text-slate-700 uppercase tracking-[0.3em] ml-1">Identity Cipher (Email)</label>
+              <div className="relative group/input">
                 <input 
                   type="email" 
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@nexus.io"
-                  className="w-full pl-4 pr-10 h-12 bg-white/[0.02] border border-white/[0.05] rounded-xl focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500 focus:bg-white/[0.04] transition-all font-bold text-xs text-white placeholder:text-slate-700"
+                  placeholder="AGENT@VECTA.IO"
+                  className="w-full pl-5 pr-12 h-14 bg-white/[0.02] border border-white/[0.05] rounded-2xl focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500/50 focus:bg-white/[0.04] transition-all font-black text-[11px] text-white placeholder:text-slate-800 tracking-[0.1em]"
                 />
-                <Globe className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-700 group-focus-within:text-brand-500 transition-colors" />
+                <Globe className="absolute right-5 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-slate-800 group-focus-within/input:text-brand-500 transition-colors" />
               </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-3">
               <div className="flex justify-between items-center ml-1">
-                <label className="text-[9px] font-black text-slate-600 uppercase tracking-widest">Access Cipher</label>
-                <button type="button" className="text-[9px] font-bold text-brand-500 hover:text-brand-400 tracking-wider">RECOVERY?</button>
+                <label className="text-[10px] font-black text-slate-700 uppercase tracking-[0.3em]">Access Key</label>
+                <button type="button" className="text-[9px] font-black text-brand-500 hover:text-brand-400 tracking-[0.2em] uppercase">Recovery?</button>
               </div>
-              <div className="relative group">
+              <div className="relative group/input">
                 <input 
                   type={showPassword ? 'text' : 'password'} 
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••••••"
-                  className="w-full pl-4 pr-12 h-12 bg-white/[0.02] border border-white/[0.05] rounded-xl focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500 focus:bg-white/[0.04] transition-all font-bold text-xs text-white placeholder:text-slate-700"
+                  className="w-full pl-5 pr-14 h-14 bg-white/[0.02] border border-white/[0.05] rounded-2xl focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500/50 focus:bg-white/[0.04] transition-all font-black text-[11px] text-white placeholder:text-slate-800 tracking-[0.2em]"
                 />
                 <button 
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-slate-700 hover:text-slate-400 transition-colors"
+                  className="absolute right-5 top-1/2 -translate-y-1/2 p-1.5 text-slate-800 hover:text-slate-400 transition-colors"
                 >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  {showPassword ? <EyeOff className="w-4.5 h-4.5" /> : <Eye className="w-4.5 h-4.5" />}
                 </button>
               </div>
             </div>
@@ -122,41 +125,41 @@ export default function LoginPage() {
             <button 
               type="submit" 
               disabled={isLoading}
-              className="w-full bg-brand-600 group relative text-white h-12 rounded-xl font-bold text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-brand-500 transition-all shadow-xl active:scale-[0.98] disabled:opacity-70"
+              className="w-full bg-brand-600 group relative text-white h-14 rounded-2xl font-black text-[11px] uppercase tracking-[0.4em] flex items-center justify-center gap-4 hover:bg-brand-500 transition-all shadow-[0_15px_30px_rgba(99,102,241,0.2)] active:scale-[0.98] disabled:opacity-70 border border-white/10"
             >
               {isLoading ? (
-                <Loader2 className="w-4 h-4 animate-spin text-white" />
+                <Loader2 className="w-5 h-5 animate-spin text-white" />
               ) : (
-                <span className="flex items-center gap-3">
-                  ENGAGE WORKSPACE <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <span className="flex items-center gap-4">
+                  Engage Workspace <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               )}
             </button>
           </form>
 
-          <div className="mt-10 pt-8 border-t border-white/[0.03] text-center">
-            <p className="text-[10px] font-bold text-slate-600 uppercase tracking-[0.1em]">
-              New Recruit? {' '}
-              <Link to="/signup" className="text-brand-400 font-black hover:text-white transition-colors">
-                REGISTER SQUAD
+          <div className="mt-12 pt-10 border-t border-white/[0.03] text-center">
+            <p className="text-[10px] font-bold text-slate-800 uppercase tracking-[0.2em]">
+              New Operative? {' '}
+              <Link to="/signup" className="text-brand-500 font-black hover:text-white transition-all underline underline-offset-4 decoration-current/30 hover:decoration-current">
+                Register Unit
               </Link>
             </p>
           </div>
         </motion.div>
         
         {/* Verification Badges */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-20 transition-all hover:opacity-40">
-          <div className="flex items-center gap-2">
-            <Shield className="w-4 h-4 text-white" />
-            <span className="text-[9px] font-black uppercase tracking-[0.15em] text-white leading-none">Security Level Omega</span>
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-x-16 gap-y-8 opacity-10 transition-all hover:opacity-40">
+          <div className="flex items-center gap-3">
+            <Shield className="w-5 h-5 text-white" />
+            <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white leading-none">Level Omega Encryption</span>
           </div>
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-white" />
-            <span className="text-[9px] font-black uppercase tracking-[0.15em] text-white leading-none">AI Powered Ops</span>
+          <div className="flex items-center gap-3">
+            <Sparkles className="w-5 h-5 text-white" />
+            <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white leading-none">Neural Core v4.2</span>
           </div>
-          <div className="flex items-center gap-2">
-            <Globe className="w-4 h-4 text-white" />
-            <span className="text-[9px] font-black uppercase tracking-[0.15em] text-white leading-none">Global Nexus Sync</span>
+          <div className="flex items-center gap-3">
+            <Globe className="w-5 h-5 text-white" />
+            <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white leading-none">Global Nexus Cluster</span>
           </div>
         </div>
       </div>
