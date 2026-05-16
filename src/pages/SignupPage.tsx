@@ -44,132 +44,131 @@ export default function SignupPage() {
   return (
     <div className="min-h-screen bg-[#fcfcfd] flex flex-col md:flex-row font-sans text-slate-900 overflow-hidden">
       {/* Left Column: Brand Info */}
-      <div className="hidden lg:flex lg:w-1/2 bg-slate-900 p-20 flex-col justify-between relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-600/20 via-transparent to-violet-500/20"></div>
-        <div className="absolute -top-20 -left-20 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="hidden lg:flex lg:w-1/2 bg-slate-900 p-12 flex-col justify-between relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-600/10 via-transparent to-violet-500/10"></div>
         
         <div className="relative z-10">
-          <Link to="/" className="inline-flex items-center gap-3 mb-20 group">
-            <div className="w-12 h-12 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center border border-white/10 group-hover:bg-brand-600 transition-colors shadow-2xl">
-              <Command className="text-white w-6 h-6" />
+          <Link to="/" className="inline-flex items-center gap-2.5 mb-16 group">
+            <div className="w-10 h-10 bg-white/10 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-brand-600 transition-colors shadow-2xl">
+              <Command className="text-white w-5 h-5" />
             </div>
-            <span className="font-display font-black text-2xl tracking-tighter text-white uppercase">SyncPro</span>
+            <span className="font-display font-bold text-xl tracking-tight text-white">SyncPro</span>
           </Link>
           
-          <h2 className="text-5xl md:text-7xl font-display font-black text-white tracking-tighter leading-[0.9] mb-12 italic">
+          <h2 className="text-4xl md:text-6xl font-display font-bold text-white tracking-tight leading-[0.95] mb-10 italic">
             Command Your <br/> Mission.
           </h2>
           
-          <div className="space-y-8">
+          <div className="space-y-6">
             {[
-              { icon: Zap, text: 'Real-time state synchronization' },
-              { icon: Target, text: 'Precision backlog management' },
-              { icon: Star, text: 'Team performance scoring' }
+              { icon: Zap, text: 'State synchronization' },
+              { icon: Target, text: 'Backlog management' },
+              { icon: Star, text: 'Performance scoring' }
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-5 text-slate-300">
-                <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center border border-white/10">
-                  <item.icon className="w-5 h-5 text-brand-400" />
+              <div key={i} className="flex items-center gap-4 text-slate-400">
+                <div className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center border border-white/5">
+                  <item.icon className="w-4 h-4 text-brand-400" />
                 </div>
-                <span className="text-sm font-bold uppercase tracking-widest">{item.text}</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest">{item.text}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="relative z-10 pt-20 border-t border-white/5">
-           <div className="flex -space-x-3 mb-6">
+        <div className="relative z-10 pt-10 border-t border-white/5">
+           <div className="flex -space-x-2 mb-4">
               {[1, 2, 3, 4, 5].map(i => (
-                <img key={i} src={`https://api.dicebear.com/7.x/avataaars/svg?seed=user${i}`} className="w-10 h-10 rounded-xl border-4 border-slate-900" alt="user" />
+                <img key={i} src={`https://api.dicebear.com/7.x/avataaars/svg?seed=user${i}`} className="w-8 h-8 rounded-lg border-2 border-slate-900" alt="user" />
               ))}
             </div>
-            <p className="text-slate-400 text-xs font-black uppercase tracking-[0.2em]">Join 10.2k Scaling Tech Teams</p>
+            <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Join 10.2k Teams</p>
         </div>
       </div>
 
       {/* Right Column: Sign Up Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 md:p-20 relative">
-        <div className="w-full max-w-lg">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 md:p-12 relative overflow-y-auto">
+        <div className="w-full max-w-md">
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 10 }}
             animate={{ opacity: 1, x: 0 }}
-            className="mb-12"
+            className="mb-8"
           >
-            <h1 className="text-4xl font-display font-black text-slate-900 tracking-tight leading-none mb-3">Enlist Squad</h1>
-            <p className="text-slate-500 font-medium font-sans">Initialize your strategic dashboard in seconds.</p>
+            <h1 className="text-2xl font-display font-bold text-slate-900 tracking-tight leading-none mb-2">Enlist Squad</h1>
+            <p className="text-slate-400 font-medium font-sans text-sm leading-relaxed">Initialize your strategic dashboard.</p>
           </motion.div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <AnimatePresence>
               {error && (
                 <motion.div 
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="bg-red-50 text-red-600 p-5 rounded-2xl text-xs font-black uppercase tracking-widest border border-red-100 flex items-center gap-3"
+                  className="bg-red-50 text-red-600 p-4 rounded-xl text-[10px] font-bold uppercase tracking-widest border border-red-100 flex items-center gap-2.5"
                 >
-                  <Lock className="w-4 h-4" />
+                  <Lock className="w-3.5 h-3.5" />
                   {error}
                 </motion.div>
               )}
             </AnimatePresence>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="space-y-3">
-                <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1">Identity Display</label>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-1.5">
+                <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest ml-1">Identity</label>
                 <input 
                   type="text" required
                   value={name} onChange={(e) => setName(e.target.value)}
                   placeholder="Full Name"
-                  className="w-full px-6 py-4 bg-slate-50/50 border border-slate-200 rounded-[1.5rem] focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500 focus:bg-white transition-all font-bold text-slate-700"
+                  className="w-full px-4 h-11 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500 focus:bg-white transition-all font-semibold text-sm"
                 />
               </div>
-              <div className="space-y-3">
-                <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1">Comm Channel</label>
+              <div className="space-y-1.5">
+                <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest ml-1">Channel</label>
                 <input 
                   type="email" required
                   value={email} onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@syncpro.io"
-                  className="w-full px-6 py-4 bg-slate-50/50 border border-slate-200 rounded-[1.5rem] focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500 focus:bg-white transition-all font-bold text-slate-700"
+                  className="w-full px-4 h-11 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500 focus:bg-white transition-all font-semibold text-sm"
                 />
               </div>
             </div>
 
-            <div className="space-y-3">
-              <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1">Access Protocol (Password)</label>
+            <div className="space-y-1.5">
+              <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest ml-1">Access Protocol</label>
               <input 
                 type="password" required
                 value={password} onChange={(e) => setPassword(e.target.value)}
                 placeholder="Secure Access Key"
-                className="w-full px-6 py-4 bg-slate-50/50 border border-slate-200 rounded-[1.5rem] focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500 focus:bg-white transition-all font-bold text-slate-700"
+                className="w-full px-4 h-11 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-brand-500/5 focus:border-brand-500 focus:bg-white transition-all font-semibold text-sm"
               />
             </div>
 
-            <div className="space-y-3">
-              <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1">Acknowledge Role</label>
-              <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest ml-1">Acknowledge Role</label>
+              <div className="grid grid-cols-2 gap-3">
                 <button
                   type="button"
                   onClick={() => setRole('MEMBER')}
-                  className={`flex items-center justify-center gap-3 p-5 rounded-[1.5rem] border-2 transition-all group ${
+                  className={`flex items-center justify-center gap-2 p-3 rounded-xl border border-2 transition-all ${
                     role === 'MEMBER' 
-                      ? "bg-slate-900 border-slate-900 text-white shadow-xl shadow-slate-900/10" 
-                      : "bg-white border-slate-200 text-slate-400 hover:border-slate-300"
+                      ? "bg-slate-900 border-slate-900 text-white" 
+                      : "bg-white border-slate-100 text-slate-400 hover:border-slate-200"
                   }`}
                 >
-                  <UserCircle className="w-5 h-5 flex-shrink-0" />
-                  <span className="text-[10px] font-black uppercase tracking-widest whitespace-nowrap">Squad Mem.</span>
+                  <UserCircle className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-[9px] font-bold uppercase tracking-widest">Squad Mem.</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setRole('ADMIN')}
-                  className={`flex items-center justify-center gap-3 p-5 rounded-[1.5rem] border-2 transition-all group ${
+                  className={`flex items-center justify-center gap-2 p-3 rounded-xl border border-2 transition-all ${
                     role === 'ADMIN' 
-                      ? "bg-slate-900 border-slate-900 text-white shadow-xl shadow-slate-900/10" 
-                      : "bg-white border-slate-200 text-slate-400 hover:border-slate-300"
+                      ? "bg-slate-900 border-slate-900 text-white" 
+                      : "bg-white border-slate-100 text-slate-400 hover:border-slate-200"
                   }`}
                 >
-                  <ShieldCheck className="w-5 h-5 flex-shrink-0" />
-                  <span className="text-[10px] font-black uppercase tracking-widest whitespace-nowrap">Lead Admin</span>
+                  <ShieldCheck className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-[9px] font-bold uppercase tracking-widest">Lead Admin</span>
                 </button>
               </div>
             </div>
@@ -177,20 +176,20 @@ export default function SignupPage() {
             <button 
               type="submit" 
               disabled={isLoading}
-              className="w-full py-6 bg-brand-600 hover:bg-brand-700 text-white rounded-[1.5rem] font-black text-xs uppercase tracking-[0.3em] flex items-center justify-center gap-3 shadow-xl shadow-brand-500/20 active:scale-[0.98] transition-all group disabled:opacity-70 mt-4"
+              className="w-full h-11 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold text-[11px] uppercase tracking-widest flex items-center justify-center gap-2.5 shadow-sm active:scale-[0.98] transition-all group disabled:opacity-70 mt-2"
             >
-              Initialize Command <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Initialize Command <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </button>
           </form>
 
-          <p className="mt-10 text-center text-sm font-bold text-slate-400 uppercase tracking-widest">
+          <p className="mt-8 text-center text-xs font-bold text-slate-400 tracking-wider">
             Identity Exists? {' '}
             <Link to="/login" className="text-brand-600 font-black hover:text-brand-700 transition-colors">
               Engage Login
             </Link>
           </p>
 
-          <p className="mt-20 text-center text-[9px] text-slate-300 font-extrabold uppercase tracking-[0.3em] leading-loose max-w-xs mx-auto">
+          <p className="mt-12 text-center text-[8px] text-slate-400 font-bold uppercase tracking-widest leading-relaxed max-w-[240px] mx-auto">
             By engaging, you authorize SyncPro to synchronize your tactical data.
           </p>
         </div>
