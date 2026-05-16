@@ -4,6 +4,7 @@ import { Command, ArrowRight, Loader2, UserCircle, ShieldCheck, Zap, Target, Sta
 import { useAuth } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'motion/react';
 import { UserRole } from '../types';
+import { Avatar } from '../components/Avatar';
 
 export default function SignupPage() {
   const [name, setName] = useState('');
@@ -77,8 +78,8 @@ export default function SignupPage() {
 
         <div className="relative z-10 pt-10 border-t border-white/5">
            <div className="flex -space-x-2 mb-4">
-              {[1, 2, 3, 4, 5].map(i => (
-                <img key={i} src={`https://api.dicebear.com/7.x/avataaars/svg?seed=user${i}`} className="w-8 h-8 rounded-lg border-2 border-slate-900" alt="user" />
+              {['Erik', 'Fiona', 'George', 'Hannah', 'Ian'].map(name => (
+                <Avatar key={name} name={name} size="xs" className="border-2 border-slate-900" />
               ))}
             </div>
             <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Join 10.2k Teams</p>

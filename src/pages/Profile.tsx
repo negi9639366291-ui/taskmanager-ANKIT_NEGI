@@ -24,6 +24,8 @@ import { useData } from '../context/DataContext';
 import { formatDate } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
 
+import { Avatar } from '../components/Avatar';
+
 export default function Profile() {
   const { user } = useAuth();
   const { tasks, projects } = useData();
@@ -66,13 +68,7 @@ export default function Profile() {
             <div className="relative z-10 flex flex-col items-center">
               <div className="relative mb-6 mt-6">
                 <div className="w-20 h-20 rounded-xl bg-white p-1 shadow-xl">
-                  <div className="w-full h-full rounded-lg overflow-hidden">
-                    <img 
-                      src={user?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.name}`} 
-                      alt={user?.name} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <Avatar name={user?.name} size="xl" className="w-full h-full rounded-lg" />
                 </div>
                 <button className="absolute -bottom-1 -right-1 p-1.5 bg-brand-600 rounded-lg shadow-lg text-white border-2 border-white hover:bg-brand-700 transition-all active:scale-90">
                   <Camera className="w-3.5 h-3.5" />

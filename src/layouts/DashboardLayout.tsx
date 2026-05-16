@@ -21,6 +21,8 @@ import {
 import { useAuth } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'motion/react';
 
+import { Avatar } from '../components/Avatar';
+
 const navItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
   { icon: Briefcase, label: 'Projects', path: '/projects' },
@@ -127,11 +129,7 @@ export default function DashboardLayout() {
           <div className="bg-slate-800/30 rounded-xl p-3 border border-white/5">
             <div className="flex items-center gap-2.5 mb-3">
               <div className="relative">
-                <img 
-                  src={user?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.name}`} 
-                  alt={user?.name}
-                  className="w-8 h-8 rounded-lg border border-white/10 object-cover"
-                />
+                <Avatar name={user?.name} size="sm" className="rounded-lg" />
                 <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 border-2 border-slate-900 rounded-full"></span>
               </div>
               <div className="flex-1 overflow-hidden">
@@ -265,11 +263,7 @@ export default function DashboardLayout() {
               </button>
 
               <div className="lg:hidden flex items-center">
-                <img 
-                  src={user?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.name}`} 
-                  alt={user?.name}
-                  className="w-8 h-8 rounded-lg border border-slate-200 shadow-sm object-cover"
-                />
+                <Avatar name={user?.name} size="sm" className="rounded-lg" />
               </div>
             </div>
           </div>

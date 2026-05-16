@@ -16,7 +16,6 @@ const INITIAL_DATA: AppData = {
       email: 'admin@example.com',
       password: 'password123',
       role: 'ADMIN',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Admin',
       joinedAt: new Date().toISOString(),
     },
     {
@@ -25,7 +24,6 @@ const INITIAL_DATA: AppData = {
       email: 'member@example.com',
       password: 'password123',
       role: 'MEMBER',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=John',
       joinedAt: new Date().toISOString(),
     },
     {
@@ -34,7 +32,6 @@ const INITIAL_DATA: AppData = {
       email: 'sarah@example.com',
       password: 'password123',
       role: 'MEMBER',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
       joinedAt: new Date().toISOString(),
     }
   ],

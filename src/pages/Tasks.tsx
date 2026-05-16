@@ -23,6 +23,8 @@ import { formatDate } from '../lib/utils';
 import { motion, AnimatePresence, LayoutGroup } from 'motion/react';
 import { Task, TaskStatus, TaskPriority } from '../types';
 
+import { Avatar } from '../components/Avatar';
+
 export default function Tasks() {
   const { tasks, projects, team, addTask, updateTask, deleteTask } = useData();
   const { user } = useAuth();
@@ -241,13 +243,7 @@ export default function Tasks() {
                     </td>
                     <td className="px-6 py-3">
                       <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-md overflow-hidden border border-slate-100">
-                           <img 
-                            src={team.find(u => u.id === task.assignedTo)?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${task.assignedTo}`} 
-                            className="w-full h-full object-cover"
-                            alt="Avatar"
-                          />
-                        </div>
+                        <Avatar name={team.find(u => u.id === task.assignedTo)?.name} size="xs" className="rounded-md" />
                         <span className="text-[10px] font-semibold text-slate-600">{team.find(u => u.id === task.assignedTo)?.name || 'Unassigned'}</span>
                       </div>
                     </td>
@@ -435,13 +431,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, team, projects, updateTask, d
 
       <div className="mt-auto pt-3 border-t border-slate-50 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg overflow-hidden border border-slate-100">
-            <img 
-              src={member?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${task.assignedTo}`} 
-              className="w-full h-full object-cover" 
-              alt="Avatar" 
-            />
-          </div>
+          <Avatar name={member?.name} size="xs" className="rounded-lg" />
           <p className="text-[9px] font-bold text-slate-500 uppercase tracking-wider">{member?.name.split(' ')[0]}</p>
         </div>
 

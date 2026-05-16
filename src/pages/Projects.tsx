@@ -21,6 +21,8 @@ import { useAuth } from '../context/AuthContext';
 import { formatDate } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
 
+import { Avatar } from '../components/Avatar';
+
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -229,11 +231,11 @@ export default function Projects() {
                         {project.members.slice(0, 3).map((memberId, idx) => {
                           const mValue = team.find(u => u.id === memberId);
                           return (
-                            <img 
+                            <Avatar 
                               key={idx}
-                              src={mValue?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${idx}`} 
-                              alt="Avatar" 
-                              className="w-7 h-7 rounded-lg border-2 border-white bg-slate-50 shadow-sm"
+                              name={mValue?.name} 
+                              size="xs"
+                              className="border-2 border-white"
                             />
                           );
                         })}
@@ -251,16 +253,16 @@ export default function Projects() {
                       {project.members.slice(0, 3).map((memberId, idx) => {
                         const mVal = team.find(u => u.id === memberId);
                         return (
-                          <img 
+                          <Avatar 
                             key={idx}
-                            src={mVal?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${idx + project.id}`} 
-                            alt="Avatar" 
-                            className="w-7 h-7 rounded-lg border-2 border-white bg-white shadow-sm"
+                            name={mVal?.name} 
+                            size="xs"
+                            className="border-2 border-white"
                           />
                         );
                       })}
                       {project.members.length > 3 && (
-                        <div className="w-7 h-7 rounded-lg border-2 border-white bg-white flex items-center justify-center text-[8px] font-black text-slate-600 shadow-sm">
+                        <div className="w-6 h-6 rounded-full border-2 border-white bg-slate-800 flex items-center justify-center text-[8px] font-black text-white shadow-sm z-10">
                           +{project.members.length - 3}
                         </div>
                       )}

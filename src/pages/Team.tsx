@@ -23,6 +23,8 @@ import { useAuth } from '../context/AuthContext';
 import { formatDate } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
 
+import { Avatar } from '../components/Avatar';
+
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -125,13 +127,7 @@ export default function Team() {
             >
               <div className="flex justify-between items-start mb-6">
                 <div className="relative">
-                  <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-slate-50 shadow-sm">
-                    <img 
-                      src={member.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${member.name}`} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <Avatar name={member.name} size="xl" className="rounded-xl" />
                   <div className="absolute top-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white"></div>
                 </div>
                 <div className="flex items-center gap-1">

@@ -16,6 +16,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { Avatar } from '../components/Avatar';
 
 export default function LandingPage() {
   return (
@@ -92,8 +93,8 @@ export default function LandingPage() {
             
             <div className="mt-10 flex items-center justify-center gap-4">
               <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map(i => (
-                  <img key={i} src={`https://api.dicebear.com/7.x/avataaars/svg?seed=user${i}`} className="w-8 h-8 rounded-lg border-2 border-[#fcfcfd]" alt="user" />
+                {['Alex', 'Ben', 'Chloe', 'David'].map(name => (
+                  <Avatar key={name} name={name} size="xs" className="border-2 border-[#fcfcfd]" />
                 ))}
               </div>
               <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">+ 10k Active Managers</p>

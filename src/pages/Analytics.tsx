@@ -18,6 +18,7 @@ import {
 } from 'recharts';
 import { useData } from '../context/DataContext';
 import { motion } from 'motion/react';
+import { Avatar } from '../components/Avatar';
 import { 
   TrendingUp, 
   CheckCircle2, 
@@ -58,6 +59,7 @@ export default function Analytics() {
     const total = tasks.filter(t => t.assignedTo === member.id).length;
     return { 
       name: member.name.split(' ')[0], 
+      fullName: member.name,
       completed, 
       total,
       productivity: total > 0 ? Math.round((completed / total) * 100) : 0
@@ -233,6 +235,7 @@ export default function Analytics() {
             {teamData.sort((a, b) => b.productivity - a.productivity).map((m, i) => (
               <div key={i} className="flex items-center gap-4 group">
                 <div className="text-xs font-bold text-slate-300 w-4">{i + 1}</div>
+                <Avatar name={m.fullName} size="sm" className="rounded-lg shadow-sm" />
                 <div className="flex-1">
                   <div className="flex justify-between items-center mb-1.5">
                     <span className="text-[11px] font-bold text-slate-700 uppercase tracking-tight">{m.name}</span>

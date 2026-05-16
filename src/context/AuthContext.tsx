@@ -55,7 +55,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       email: userData.email || '',
       password: userData.password || '',
       role: userData.role || 'MEMBER',
-      avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${userData.name}`,
       joinedAt: new Date().toISOString(),
     };
 
