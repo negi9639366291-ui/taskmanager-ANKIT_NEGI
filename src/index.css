@@ -30,64 +30,60 @@
   }
   
   body {
-    @apply font-sans text-slate-900 bg-[#f8fafc];
-  }
-
-  body.dashboard-dark {
-    @apply bg-dark-bg text-slate-200;
+    @apply font-sans;
+    background-color: #0B0B0F;
+    color: #94a3b8;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight text-slate-900 font-bold;
-  }
-
-  .dashboard-dark h1, .dashboard-dark h2, .dashboard-dark h3, .dashboard-dark h4, .dashboard-dark h5, .dashboard-dark h6 {
-    @apply text-white;
+    @apply font-display tracking-tight text-white font-bold;
   }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-white/70 backdrop-blur-md border border-slate-200/60 shadow-sm;
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
   }
   
-  .premium-shadow {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
   }
-
-  .nav-blur {
-    @apply sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-slate-200/60;
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
   }
-
-  .animate-shake {
-    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 
-@keyframes shake {
-  10%, 90% { transform: translate3d(-1px, 0, 0); }
-  20%, 80% { transform: translate3d(2px, 0, 0); }
-  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
-  40%, 60% { transform: translate3d(4px, 0, 0); }
+/* Recharts Customization for Dark Theme */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.02);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+.recharts-text {
+  fill: #475569 !important;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+.recharts-legend-item-text {
+  color: #94a3b8 !important;
+  font-size: 10px !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
-}
-
-/* Recharts Customization */
-.recharts-cartesian-grid-horizontal line {
-  stroke: #f1f5f9;
+.recharts-tooltip-cursor {
+  fill: rgba(255, 255, 255, 0.02);
 }
 
 .recharts-tooltip-wrapper {
